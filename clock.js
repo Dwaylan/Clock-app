@@ -5,7 +5,7 @@ const clock = document.querySelector('.clock')
 const tick = () =>{
     // Creating a new date variable for every new second
     const now = new Date();
-
+    
     // Creating a variable to convert milliseconds to hours
     const hours = now.getHours()
 
@@ -15,8 +15,14 @@ const tick = () =>{
     // Creating a variable to convert milliseconds to seconds
     const seconds = now.getSeconds()
 
+    // Additional formatting for year
+    const date = dateFns.format(now, 'dddd MMMM, do, YYYY')
+
     // Creating an HTML template with template literals to append the time to the DOM
     const html = `
+        <span>Today is ${date}</span>
+        <br>
+        <br>
         <span>${hours}</span> :
         <span>${minutes}</span> :
         <span>${seconds}</span>
